@@ -1,7 +1,8 @@
 import os
 from pathlib import Path
-import dj_database_url 
 from decouple import config
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -59,8 +60,12 @@ WSGI_APPLICATION = 'jahfixmanager.wsgi.application'
 
 # Base de datos
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
 
 # Validadores de contraseñas
 AUTH_PASSWORD_VALIDATORS = [

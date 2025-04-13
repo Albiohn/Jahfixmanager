@@ -20,18 +20,22 @@ def registro_empleado(request):
     if request.method == 'POST':
         # Usar el formulario para validar los datos
         form = EmpleadoForm(request.POST)
+        print("Formulario recibido:", request.POST)  # Muestra los datos recibidos
+        
         if form.is_valid():
-            # Guardar el nuevo empleado
+            print("Formulario válido. Guardando empleado...")
             form.save()
             # Redirigir al login
             return redirect('login')
         else:
+            print("Errores en el formulario:", form.errors)  # Muestra los errores del formulario
             # Si los datos no son válidos, mostrar errores
             return JsonResponse({"error": form.errors}, status=400)
 
     # Si el formulario es GET, renderiza el formulario vacío
     form = EmpleadoForm()
     return render(request, 'miApp/registro.html', {'form': form})
+
 
 
 
