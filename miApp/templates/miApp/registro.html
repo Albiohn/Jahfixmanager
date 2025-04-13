@@ -15,9 +15,24 @@
     
     <div class="hero1">
         <h3>Registrar nuevo empleado</h3>
+
+        <!-- Formulario de registro -->
         <form method="POST" class="form-registrar-empleado">
             {% csrf_token %}
-            
+
+            <!-- Mostrar errores de formulario -->
+            {% if form.errors %}
+                <div class="error-message">
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
             <label for="nombre">Nombre:</label><br>
             <input type="text" name="nombre" required><br><br>
 
