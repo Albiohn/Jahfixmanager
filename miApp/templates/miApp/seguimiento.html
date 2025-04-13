@@ -1,0 +1,83 @@
+{% extends 'miApp/base.html' %}
+
+{% block content %}
+
+<!-- Sección de ingreso de número de seguimiento -->
+<section class="hero" style="flex-direction: column; align-items: center;">
+  <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 80%; max-width: 500px;">
+    <h2 style="text-align: center;">Seguimiento de Reparación</h2>
+    <form method="GET">
+      <input type="text" name="id_reparacion" placeholder="Número de seguimiento (ID reparación)" style="width: 100%; margin-top: 1rem;">
+      <button type="submit" style="margin-top: 1rem;">Consultar</button>
+    </form>
+  </div>
+</section>
+
+<!-- Sección de resultados -->
+<section class="hero1">
+  <div style="text-align: center;">
+    <h3>Estado actual de tu reparación</h3>
+    <p><strong>🔍 Diagnóstico:</strong> En progreso</p>
+    <p><strong>🛠 Reparación:</strong> Pendiente</p>
+    <p><strong>✅ Control de calidad:</strong> No iniciado</p>
+  </div>
+</section>
+
+<!-- Información del técnico asignado -->
+<section class="hero">
+  <div style="background-color: #16363F; color: white; padding: 2rem; border-radius: 15px; width: 100%; text-align: center;">
+    <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍🔧</div>
+    <h3>Técnico Asignado</h3>
+    <p>Juan Pérez - Especialista en reparación</p>
+    <p>Encargado de tu dispositivo</p>
+  </div>
+</section>
+
+<!-- Comentarios del usuario -->
+<section class="hero">
+  <div style="background: white; padding: 2rem; border-radius: 15px; width: 100%; max-width: 600px; text-align: center;">
+    <h3>Proporcionar Comentarios</h3>
+    <form>
+      <input type="text" placeholder="Clasificación (1 a 5)" style="width: 100%;">
+      <textarea placeholder="Escribe tu comentario" rows="4" style="margin-top: 1rem;"></textarea>
+      <button type="submit" style="margin-top: 1rem;">Enviar Comentario</button>
+    </form>
+  </div>
+</section>
+
+<!-- Estadísticas -->
+<section class="hero1">
+  <h3>Estadísticas de Reparación</h3>
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+    <div style="background: white; padding: 1rem 2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 1rem; text-align: center;">
+      <div style="font-size: 2rem;">⏱️</div>
+      <p><strong>Tiempo promedio:</strong> 5 días</p>
+    </div>
+    <div style="background: white; padding: 1rem 2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 1rem; text-align: center;">
+      <div style="font-size: 2rem;">💰</div>
+      <p><strong>Costo promedio:</strong> $100</p>
+    </div>
+  </div>
+</section>
+
+<!-- Opiniones -->
+<section class="hero">
+  <div style="text-align: center; width: 100%;">
+    <h3>Opiniones de otros clientes</h3>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+      <div style="background: white; padding: 1rem; border-radius: 10px; width: 250px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <div style="font-size: 2rem;">🧑</div>
+        <p><strong>Carlos Sánchez</strong></p>
+        <p>Excelente servicio, muy recomendable!</p>
+      </div>
+      <div style="background: white; padding: 1rem; border-radius: 10px; width: 250px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <div style="font-size: 2rem;">👩</div>
+        <p><strong>Katherine Nova</strong></p>
+        <p>Tiempo de respuesta rápido, muy satisfactorio.</p>
+      </div>
+    </div>
+    <button style="margin-top: 1rem;">Ver todas las reseñas</button>
+  </div>
+</section>
+
+{% endblock %}

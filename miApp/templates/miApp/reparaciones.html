@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reparaciones</title>
+</head>
+<body>
+    <h1>Gestión de Reparaciones</h1>
+
+    <section>
+        <h2>Nueva Reparación</h2>
+        <form action="/guardar_reparacion" method="POST">
+            <label for="cliente">Cliente:</label>
+            <select id="cliente" name="cliente_id">
+                <option value="1">Juan Pérez</option>
+                <!-- Cargar dinámicamente los clientes -->
+            </select><br><br>
+
+            <label for="dispositivo">Dispositivo:</label>
+            <select id="dispositivo" name="dispositivo_id">
+                <option value="101">Laptop Dell</option>
+                <!-- Dispositivos registrados -->
+            </select><br><br>
+
+            <label for="empleado">Empleado responsable:</label>
+            <select id="empleado" name="empleado_id">
+                <option value="10">Carlos Gómez</option>
+                <!-- Lista de empleados -->
+            </select><br><br>
+
+            <label for="fecha_ingreso">Fecha de Ingreso:</label>
+            <input type="date" id="fecha_ingreso" name="fecha_ingreso" required><br><br>
+
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
+                <option value="pendiente">Pendiente</option>
+                <option value="en_proceso">En proceso</option>
+                <option value="completado">Completado</option>
+            </select><br><br>
+
+            <button type="submit">Registrar Reparación</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Reparaciones Existentes</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Dispositivo</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R001</td>
+                    <td>Juan Pérez</td>
+                    <td>Laptop Dell</td>
+                    <td>2025-04-01</td>
+                    <td>En proceso</td>
+                    <td><a href="reparacion_detalle.html">Ver Detalle</a></td>
+                </tr>
+                <!-- Más reparaciones -->
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

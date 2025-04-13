@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Empleado</title>
+    <link rel="stylesheet" href="{% static 'miApp/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>JhaFix</h1>
+        </div>
+    </header>
+    
+    <div class="hero1">
+        <h3>Registrar nuevo empleado</h3>
+        <form method="POST" class="form-registrar-empleado">
+            {% csrf_token %}
+            
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" required><br><br>
+
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" name="apellido" required><br><br>
+
+            <label for="correo">Correo:</label><br>
+            <input type="email" name="correo" required><br><br>
+
+            <label for="rol">Rol:</label><br>
+            <input type="text" name="rol" required><br><br>
+
+            <div class="form-help">
+                <a href="#">¿Olvidaste algo?</a>
+            </div>
+            
+            <input type="submit" value="Registrar" class="btn">
+        </form>
+    </div>
+    
+    <footer>
+        <p>© 2025 . Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

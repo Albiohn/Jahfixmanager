@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asignar Etapa</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1, h2 { color: #333; }
+        form { margin-bottom: 30px; }
+        input, textarea, select {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            width: 300px;
+        }
+        button { padding: 8px 15px; }
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        table th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+    <h1>Asignar Etapa a Reparación</h1>
+
+    <form action="/detalle-etapa/crear/" method="post">
+        {% csrf_token %}
+        
+        <label>Seleccionar Reparación</label>
+        <select name="reparacion_id" required>
+            <option value="">Seleccione una reparación</option>
+            {% for rep in reparaciones %}
+                <option value="{{ rep.id }}">{{ rep.id }} - {{ rep.estado }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Seleccionar Etapa</label>
+        <select name="etapa_id" required>
+            <option value="1">Diagnóstico</option>
+            <option value="2">Reparación</option>
+            <option value="3">Control de Calidad</option>
+        </select>
+
+        <label>Fecha inicio</label>
+        <input type="date" name="fecha_inicio" required>
+
+        <label>Fecha fin</label>
+        <input type="date" name="fecha_fin" required>
+
+        <label>Comentarios (opcional)</label>
+        <textarea name="comentarios"></textarea>
+
+        <button type="submit">Asignar Etapa</button>
+    </form>
+
+    <h2>Etapas Asignadas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Reparación</th>
+                <th>Etapa</th>
+                <th>Fecha inicio</th>
+                <th>Fecha fin</th>
+                <th>Comentarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detalle in detalles %}
+            <tr>
+                <td>{{ detalle.reparacion.id }}</td>
+                <td>{{ detalle.etapa.nombre_etapa }}</td>
+                <td>{{ detalle.fecha_inicio }}</td>
+                <td>{{ detalle.fecha_fin }}</td>
+                <td>{{ detalle.comentarios }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
