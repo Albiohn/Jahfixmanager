@@ -276,3 +276,48 @@ footer {
 .form-help a:hover {
     text-decoration: underline;
 }
+
+/* Estilos específicos para los botones flotantes */
+.footer {
+    position: relative; /* Esto asegurará que el footer no afecte el posicionamiento de los botones flotantes */
+    z-index: 1; /* Asegura que el footer esté por debajo de los botones flotantes */
+    text-align: center;
+    padding: 2rem;
+    background-color: #16363F;
+    color: white;
+}
+
+/* Contenedor de los botones flotantes */
+.contenedor-botones {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    gap: 20px; /* Aumenta el espacio entre los botones */
+    z-index: 9999; /* Asegura que los botones estén por encima de otros elementos */
+}
+
+/* Estilo de los botones flotantes */
+.btn-flotante {
+    background-color: #52AB98;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover para los botones */
+.btn-flotante:hover {
+    background-color: #3e8e7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+/* Ajustamos la posición de los botones flotantes si es necesario */
+.registro {
+    bottom: 70px; /* Aseguramos que el botón "Registrar empleado" no se sobreponga con el otro */
+}

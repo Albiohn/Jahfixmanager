@@ -16,9 +16,10 @@
         <nav>
             <ul>
                 <li><a href="{% url 'index' %}" class="activo">Inicio</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="{% url 'sobre_nosotros' %}">Sobre nosotros</a></li>
                 <li><a href="#">Contáctanos</a></li>
-                <li><a href="#">Condiciones</a></li>
+                <li><a href="{% url 'condiciones' %}">Condiciones</a></li>
+
                 </ul>
                 </nav>
                 
@@ -32,8 +33,12 @@
     </main>
     <footer>
         &copy; 2025 - Todos los derechos reservados.
-        <a href="{% url 'login' %}" class="btn-flotante">Vista empleado</a>
-        <a href="{% url 'registro' %}" class="btn-flotante registro">Registrar empleado</a>
+        <div class="contenedor-botones">
+            <a href="{% url 'login' %}" class="btn-flotante">Vista empleado</a>
+            <a href="{% url 'registro' %}" class="btn-flotante registro">Registrar empleado</a>
+        </div>
     </footer>
+    
+    
 </body>
 </html>

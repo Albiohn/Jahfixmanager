@@ -6,7 +6,6 @@ body {
     background-color: #F2F3F3;
 }
 
-
 header {
     background-color: #c2bebe;
     color: rgb(8, 29, 17);
@@ -37,7 +36,6 @@ header nav ul li a {
 header nav ul li a.activo {
     font-weight: bold;
 }
-
 
 button, .btn, .auth-buttons button, .btn-cotizacion, .btn-seguimiento {
     background-color: #52AB98;
@@ -70,7 +68,6 @@ button:hover, .btn:hover, .auth-buttons button:hover, .btn-cotizacion:hover, .bt
     margin-top: 1rem;
 }
 
-
 .hero {
     display: flex;
     justify-content: space-between;
@@ -96,7 +93,6 @@ button:hover, .btn:hover, .auth-buttons button:hover, .btn-cotizacion:hover, .bt
     max-width: 350px;
     border-radius: 10px;
 }
-
 
 .hero1 {
     background-color: #e9f9f1;
@@ -135,7 +131,6 @@ button:hover, .btn:hover, .auth-buttons button:hover, .btn-cotizacion:hover, .bt
     background-color: #3e8e7e;
     transform: translateY(-2px);
 }
-
 
 .features {
     display: flex;
@@ -181,7 +176,6 @@ button:hover, .btn:hover, .auth-buttons button:hover, .btn-cotizacion:hover, .bt
     margin: 2rem;
 }
 
-
 .navbar {
     background-color: #16363F;
     color: white;
@@ -193,7 +187,6 @@ button:hover, .btn:hover, .auth-buttons button:hover, .btn-cotizacion:hover, .bt
     flex-wrap: wrap;
     position: relative;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
 }
 
 .navbar .btn-seguimiento {
@@ -216,7 +209,6 @@ button:hover, .btn:hover, .auth-buttons button:hover, .btn-cotizacion:hover, .bt
     text-decoration: none;
 }
 
-
 input, select, textarea {
     padding: 0.6rem;
     border-radius: 8px;
@@ -229,7 +221,6 @@ input:focus, select:focus, textarea:focus {
     border-color: #52AB98;
     box-shadow: 0 0 6px rgba(82, 171, 152, 0.5);
 }
-
 
 footer {
     text-align: center;
@@ -284,4 +275,49 @@ footer {
 
 .form-help a:hover {
     text-decoration: underline;
+}
+
+/* Estilos específicos para los botones flotantes */
+.footer {
+    position: relative; /* Esto asegurará que el footer no afecte el posicionamiento de los botones flotantes */
+    z-index: 1; /* Asegura que el footer esté por debajo de los botones flotantes */
+    text-align: center;
+    padding: 2rem;
+    background-color: #16363F;
+    color: white;
+}
+
+/* Contenedor de los botones flotantes */
+.contenedor-botones {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    gap: 20px; /* Aumenta el espacio entre los botones */
+    z-index: 9999; /* Asegura que los botones estén por encima de otros elementos */
+}
+
+/* Estilo de los botones flotantes */
+.btn-flotante {
+    background-color: #52AB98;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover para los botones */
+.btn-flotante:hover {
+    background-color: #3e8e7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+/* Ajustamos la posición de los botones flotantes si es necesario */
+.registro {
+    bottom: 70px; /* Aseguramos que el botón "Registrar empleado" no se sobreponga con el otro */
 }

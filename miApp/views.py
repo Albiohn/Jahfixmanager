@@ -108,3 +108,10 @@ def cotizacionin(request):
 
 def reparaciones(request):
     return render(request, 'miApp/reparaciones.html')
+
+def sobre_nosotros(request):
+    return render(request, 'miApp/sobre_nosotros.html')
+
+def condiciones_servicio(request):
+    return render(request, 'miApp/Condiciones.html')
+
